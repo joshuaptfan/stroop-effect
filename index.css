@@ -1,0 +1,220 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 150%;
+}
+
+noscript {
+	display: block;
+	line-height: 2rem;
+	width: 100%;
+	font-size: 125%;
+	text-align: center;
+	background-color: #F70;
+	box-shadow: 0 0 1rem black;
+}
+
+section {
+	position: fixed;
+	overflow-y: scroll;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	background-color: white;
+}
+
+@keyframes fly-out-left {
+	from { right: 0 }
+	to { right: 100%; }
+}
+
+#main > header {
+	position: relative;
+	height: 8.5rem;
+	overflow: hidden;
+	background-color: #8FA;
+	perspective: 40rem;
+	perspective-origin: right center;
+}
+
+#banner-bg {
+	position: relative;
+	top: -50%;
+	height: 200%;
+	width: 100%;
+	background-image: linear-gradient(to right, #F19 0%, #8FF 50%, #FFA 60%, transparent 100%);
+	transform: rotateX(-5deg) rotateY(35deg) rotateZ(3deg);
+}
+
+#banner-bg > span {
+	position: absolute;
+	margin-top: -0.5em;
+	font-size: 2rem;
+	text-align: center;
+	color: transparent;
+}
+
+#main > header > h1 {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	padding: 2.9rem 0;
+	font-size: 3rem;
+	text-align: center;
+	text-shadow: 0 0 2rem white;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+#main p {
+	margin: 1.5rem auto;
+	padding: 0 1rem;
+	max-width: 60rem;
+	text-align: left;
+}
+
+button {
+	position: relative;
+	display: inline-block;
+	margin: 3rem 1rem;
+	padding: 1rem;
+	font-family: sans-serif;
+	font-size: 2.5rem;
+	font-weight: bold;
+	color: white;
+	background-color: #0C0;
+	border: none;
+	border-radius: 1rem;
+	box-shadow: 0 0.1rem 1rem gray;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #0D0;
+}
+
+button:active {
+	top: 0.1rem;
+	box-shadow: 0 0.1rem 0.5rem gray;
+}
+
+#countdown {
+	z-index: -1;
+	left: 100%;
+}
+
+@keyframes fly-in-right-fade-out {
+	0% { left: 100% }
+	9.375% { left: 0 }
+	97% { opacity: 1 }
+	100% {
+		left: 0;
+		opacity: 0;
+	}
+}
+
+#countdown > * {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#countdown > div {
+	height: 9rem;
+	width: 9rem;
+	line-height: 9rem;
+	font-size: 4rem;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 50%;
+	box-shadow: 0 0.1rem 2rem gray;
+	animation: pulse 3s paused;
+}
+
+#countdown > svg {
+	height: 10rem;
+	width: 10rem;
+	stroke-dasharray: 26;
+	stroke-dashoffset: 26;
+	fill: none;
+	animation: pulse 3s paused, sweep 3s linear forwards paused;
+}
+
+@keyframes pulse {
+	17% { transform: translate(-50%, -50%) scale(1.05) }
+	33% { transform: translate(-50%, -50%) scale(1) }
+	50% { transform: translate(-50%, -50%) scale(1.05) }
+	67% { transform: translate(-50%, -50%) scale(1) }
+	83% { transform: translate(-50%, -50%) scale(1.05) }
+}
+
+@keyframes sweep {
+	0% { stroke: #F00 }
+	33% { stroke: #F70 }
+	67% { stroke: #FD0 }
+	100% {
+		stroke: #0F0;
+		stroke-dashoffset: 0;
+	}
+}
+
+#test {
+	display: none;
+	z-index: -2;
+}
+
+#task {
+	position: relative;
+	margin-top: 4rem;
+	left: 50%;
+	width: calc(100% - 10rem);
+	max-width: 50rem;
+	transform: translate(-50%);
+}
+
+#task > span {
+	display: inline-block;
+	width: 7.5rem;
+	margin: 0.5rem;
+	padding-left: 1.5rem;
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+#finish {
+	background-color: #888;
+}
+
+#finish:hover {
+	background-color: #999;
+}
+
+#score {
+	width: 100%;
+	text-align: center;
+}
+
+#score > span {
+	display: inline-block;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	border: 0.3rem solid;
+	border-radius: 1rem;
+}
+
+#home {
+	background-color: #08F;
+}
+
+#home:hover {
+	background-color: #19F;
+}
+
+@media only screen
+and (max-width: 480px) {
+	#header > h1 {
+		font-size: 2.5rem;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+}
