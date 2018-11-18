@@ -197,7 +197,7 @@ button:active {
 
 #score > span {
 	display: inline-block;
-	margin: 0.5rem;
+	margin: 3rem 0.5rem;
 	padding: 0.5rem;
 	border: 0.3rem solid;
 	border-radius: 1rem;

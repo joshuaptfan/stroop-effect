@@ -17,6 +17,7 @@ document.onreadystatechange = function () {
 	}
 
 	document.getElementById('start').addEventListener('click', pressStart);
+	document.getElementById('finish').addEventListener('click', genScore);
 	document.getElementById('home').addEventListener('click', pressHome);
 }
 
@@ -72,17 +73,17 @@ function genTask(set, isColorSync) {
 	}
 
 	document.getElementById('test').style.display = 'block';
-	document.getElementById('finish').addEventListener('click', genScore);
+	document.getElementById('finish').style.display = 'inline-block';
 	document.getElementById('home').style.display = 'none';
 	document.getElementById('score').style.display = 'none';
 	document.getElementById('next').style.display = 'none';
 	window.testTime = Date.now();
 }
 
-function genScore(e) {
+function genScore() {
 	var score = document.getElementById('score');
 
-	e.target.removeEventListener('click', genScore);
+	document.getElementById('finish').style.display = 'none';
 	score.style.display = 'block';
 	if (testNum == score.childElementCount) {
 		var testScore = document.createElement('span');
