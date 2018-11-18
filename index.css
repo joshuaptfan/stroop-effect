@@ -170,14 +170,17 @@ button:active {
 	left: 50%;
 	width: calc(100% - 10rem);
 	max-width: 50rem;
+	text-align: left;
 	transform: translate(-50%);
 }
 
 #task > span {
 	display: inline-block;
-	width: 7.5rem;
+	/* width: 7.5rem; */
+	width: 9rem;
 	margin: 0.5rem;
-	padding-left: 1.5rem;
+	/* padding-left: 1.5rem; */
+	padding-left: 6rem;
 	font-size: 2rem;
 	font-weight: bold;
 }

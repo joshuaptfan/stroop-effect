@@ -52,24 +52,37 @@ function startCountdown() {
 			count.innerHTML = 'GO';
 			clearInterval(sI);
 			countdown.style.animation = 'none';
-			genTask(tests[testNum][0], tests[testNum][1]);
+			// genTask(tests[testNum][0], tests[testNum][1]);
+			genTask(test[testNum]);
 		}
 	}, 1000);
 }
 
 function genTask(set, isColorSync) {
+	console.log(set);
 	var task = document.getElementById('task');
-	var wordSet = words[set];
+	// var wordSet = words[set];
 
 	while (task.lastChild)
 		task.removeChild(task.lastChild);
 
-	for (var i = 0; i < 30; i++) {
-		var word = document.createElement('span');
-		var rand = Math.floor(Math.random() * wordSet.length);
-		word.innerHTML = wordSet[rand];
-		word.style.color = colors[isColorSync ? rand : Math.floor(Math.random() * colors.length)];
-		task.appendChild(word);
+	// Randomized test
+	// for (var i = 0; i < 30; i++) {
+	// 	var word = document.createElement('span');
+	// 	var rand = Math.floor(Math.random() * wordSet.length);
+	// 	word.innerHTML = wordSet[rand];
+	// 	word.style.color = colors[isColorSync ? rand : Math.floor(Math.random() * colors.length)];
+	// 	task.appendChild(word);
+	// }
+
+	// Fixed test
+	for (var i = 0; i < 5; i++) {
+		for (var j = 0; j < 3; j++) {
+			var word = document.createElement('span');
+			word.innerHTML = set[i + j * 5].w;
+			word.style.color = set[i + j * 5].c;
+			task.appendChild(word);
+		}
 	}
 
 	document.getElementById('test').style.display = 'block';
